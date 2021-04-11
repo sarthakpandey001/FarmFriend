@@ -1,9 +1,12 @@
 const express = require("express");
-const app = express();
+var app = express();
+app.set("view engine", "ejs");
+app.use(express.static("public"));
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+    res.render("index",{});
+  
 })
 
 app.listen(port, () => {
