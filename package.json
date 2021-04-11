@@ -1,0 +1,22 @@
+{
+  "name": "farmfriend",
+  "version": "1.0.0",
+  "description": "Project to establish direct communication between buyer and seller bypassing  supply-chain issues.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarthakpandey001/FarmFriend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarthakpandey001/FarmFriend/issues"
+  },
+  "homepage": "https://github.com/sarthakpandey001/FarmFriend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
