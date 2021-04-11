@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/ina.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="css/jquery.convform.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="js/jquery.convform.js"></script>
+ 
+  
+  
+  <title>Index</title>
+</head>
+<body>
+
+ 
+ <div class="chaticon">
+    <i class="fa fa-comment" aria-hidden="true"></i>
+ </div>
+
+ <div class="chatbox">
+  <div class="my-conv-form-wrapper">
+		<form action="" method="GET" class="hidden">
+
+      <select data-conv-question="Hello! How can I help you" name="category">
+        <option value="farmer">I am an farmer</option>
+        <option value="buyer">I am an buyer</option>
+      </select>
+
+      <div data-conv-fork="category">
+        <div data-conv-case="farmer">
+          <input type="text" name="register" data-conv-question="Please, register first">    
+        </div>
+        <div data-conv-case="buyer" data-conv-fork="first-question2">
+          <input type="text" name="register" data-conv-question="Please, register first"> 
+        </div>
+      </div>
+
+      <input type="text" name="name" data-conv-question="Please, Enter your name">
+
+      <input type="text" data-conv-question="Hi {name}, <br> It's a pleasure to meet you." data-no-answer="true">
+
+     
+
+      <select data-conv-question="Please Conform">
+        <option value="Yes">Conform</option>
+      </select>
+
+  	</form>
+	</div>
+ </div>
+
+  <header>
+    <h1>FarmFriend</h1>
+  </header>
+  
+  <nav class="main-nav">
+    <ul>
+      <li><a href="" class="join">Login</a></li>
+      <li><a href="" class="register">Register</a></li>
+      <
+      <li><a href="">Live Prices</a></li>
+      <li><a href="">FQC Union</a></li>
+      <li><a href="">About Us</a></li>
+
+    </ul>
+  </nav>
+  
+
+ <section class="banner">
+  <img src="/img/farmer1.jpg" onmouseover="imagefun()" id="getImage">
+     </section> 
+    
+  
+  
+  <main> 
+    <article >
+      
+    </article>
+  </main>
+  <section class="join">
+    <h2>Our vision!</h2>
+    <p>We are Trying to establish a direct communuication between farmer and buyer eradicating the middleman in the demand-supply chain.</p>
+    
+  </section>
+  <footer>
+    <p class="copyright">Copyright &copy 2021 DevHaste</p>
+  </footer>
+
+
+<script>
+    function imagefun() {
+        var Image_Id = document.getElementById('getImage');
+        if (Image_Id.src.match("/img/farmer1.jpg")) {
+            Image_Id.src = "/img/farmer2.jpg";
+           }
+
+         else if(Image_Id.src.match("/img/farmer2.jpg")) {
+            Image_Id.src = "/img/farmer3.jpg";
+                }  
+
+        else {
+            Image_Id.src = "/img/farmer1.jpg";
+        }
+    }        
+</script>
+ 
+</body>
+</html>
