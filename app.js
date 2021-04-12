@@ -9,6 +9,11 @@ app.get('/', (req, res) => {
   
 })
 
+app.get('/fqc.ejs', (req, res) => {
+  res.render("fqc",{});
+
+})
+
   
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
