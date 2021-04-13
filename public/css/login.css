@@ -22,6 +22,24 @@ body {
 .form-signin .checkbox {
   font-weight: 400;
 }
+/* header{
+  background-color: yellow;
+  padding: 0px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}*/
+header h1{
+  color: green;
+  border: 4px solid red;
+  display: inline-block;
+  padding: 6px 6px;
+  border-radius: 20px;
+}
+
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
