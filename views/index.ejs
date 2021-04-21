@@ -63,7 +63,7 @@
       
       <li><a href="/plist">Prices List</a></li>
       <li><a href="/fqc">FQC Union</a></li>
-      <li><a href="">About Us</a></li>
+      <li><a href="/product">List Product</a></li>
 
     </ul>
   </nav>
@@ -76,9 +76,19 @@
   
   
   <main> 
-    <article >
-      
-    </article>
+  <!-- <% if (idpass.User == "farmer") { %> -->
+      <% idpass.forEach(idpass => { %>
+          <p class="username"><%= idpass.Username %></p>
+          <p class="Productname"><%= idpass.ProductName %></p>
+          <p class="district"><%= idpass.district %></p>
+          <p class="Variety"><%= idpass.Variety %></p>
+          <p class="price"><%= idpass.price %></p>
+        
+      <% }) %>
+    <% } else { %>
+      <p>There is no list to display...</p>
+    <% } %>
+  
   </main>
   <section class="join">
     <h2>Our vision!</h2>

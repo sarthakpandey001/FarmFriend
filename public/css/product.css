@@ -1,0 +1,91 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin-top: 10px;
+    display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #111;
+  color:#fff;
+}
+.form-product {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+  .form-product .checkbox {
+    font-weight: 400;
+  }
+  /* header{
+    background-color: yellow;
+    padding: 0px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }*/
+  header h1{
+    color: green;
+    border: 4px solid red;
+    display: inline-block;
+    padding: 6px 6px;
+    border-radius: 20px;
+    margin-top: 0px;
+  }
+  
+  .form-product .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-product .form-control:focus {
+    z-index: 2;
+  }
+  .form-product .log input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-product #inputPassword {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  a{
+      text-decoration: none;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+  
+  .fa {
+      padding: 8px;
+      font-size: 30px;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+    }
+    
+    /* Add a hover effect if you want */
+    .fa:hover {
+      opacity: 0.7;
+    }
+    
+   .prod{
+    transform: scaleY(0);
+   }
