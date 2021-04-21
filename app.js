@@ -4,6 +4,7 @@ const session = require("express-session");///cokkies
 const passport = require("passport");//for login and session cokkies
 const findOrCreate = require("mongoose-findorcreate");
 const morgan = require('morgan');//middleware
+/*const Idpass=require('Idpass')*/
 //app.use(passport.initialize());
 //app.use(passport.session());
 
@@ -22,15 +23,51 @@ mongoose.connect(dbURI,{ useNewUrlParser: true, useUnifiedTopology: true })
  .catch((err) => console.log(err));
 
 
+const Schema = mongoose.Schema;
+
+const IdSchema = new Schema({
+    User: {
+        type: String,
+        required: true,
+      },
+    username: {
+    type: String,
+    
+  },
+    password: {
+    type: String,
+    required: true
+  },
+  Productname: {
+    type: String,
+  },
+  district: {
+    type: String,
+    
+  },
+  rating: {
+    type: Number,
+  },
+  Variety: {
+    type: String,
+    
+  },
+  Price: {
+    type: Number,
+  },
+
+}, { timestamps: true });
+
+const Idpass = mongoose.model('Idpass',IdSchema);
 
 app.get('/', (req, res) => {
-    res.render("index",{});
-   res.redirect('/idpass');
-  
+  /*res.render("index",{});*/
+ res.redirect('/idpass');
+
 })
 
 app.get('/fqc', (req, res) => {
-  res.render("fqc",{});
+res.render("fqc",{});
 
 })
 
@@ -78,7 +115,7 @@ app.get('/product', (req, res) => {
 
 })
 
-app.post('/talk', (req, res) => {
+app.get('/talk', (req, res) => {
   res.render("talk",{});
 })
 

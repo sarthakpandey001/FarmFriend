@@ -1,3 +1,4 @@
+/*
 const mongoose = require('mongoose');
 const passport = require('passport');
 const Schema = mongoose.Schema;
@@ -9,7 +10,7 @@ const IdSchema = new Schema({
       },
     username: {
     type: String,
-    required: true,
+    
   },
     email: {
     type: email,
@@ -41,3 +42,4 @@ const IdSchema = new Schema({
 
 const Idpass = mongoose.model('Idpass', Idschema);
 module.exports = Idpass;
+*/

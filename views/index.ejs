@@ -76,19 +76,18 @@
   
   
   <main> 
-  <!-- <% if (idpass.User == "farmer") { %> -->
+     <!-- <% if (idpass.User == "farmer") { %> -->
       <% idpass.forEach(idpass => { %>
-          <p class="username"><%= idpass.Username %></p>
-          <p class="Productname"><%= idpass.ProductName %></p>
-          <p class="district"><%= idpass.district %></p>
-          <p class="Variety"><%= idpass.Variety %></p>
-          <p class="price"><%= idpass.price %></p>
-        
-      <% }) %>
-    <% } else { %>
-      <p>There is no list to display...</p>
-    <% } %>
-  
+        <p class="username"><%= idpass.Username %></p>
+        <p class="Productname"><%= idpass.ProductName %></p>
+        <p class="district"><%= idpass.district %></p>
+        <p class="Variety"><%= idpass.Variety %></p>
+        <p class="price"><%= idpass.price %></p>
+      
+    <% }) %>
+  <% } else { %>
+    <p>There is no list to display...</p>
+  <% } %>
   </main>
   <section class="join">
     <h2>Our vision!</h2>
