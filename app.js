@@ -15,6 +15,10 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
+app.use((req, res, next) => {
+  res.locals.path = req.path;
+  next();
+});
 const port = 3000;
 
 const dbURI= 'mongodb+srv://Devhaste:devhasteuser4321@farmfriend.tlyjg.mongodb.net/Userinfo?retryWrites=true&w=majority';
@@ -26,18 +30,12 @@ mongoose.connect(dbURI,{ useNewUrlParser: true, useUnifiedTopology: true })
 const Schema = mongoose.Schema;
 
 const IdSchema = new Schema({
-    User: {
-        type: String,
-        required: true,
-      },
-    username: {
+    
+  username: {
     type: String,
     
   },
-    password: {
-    type: String,
-    required: true
-  },
+  
   Productname: {
     type: String,
   },
@@ -48,21 +46,22 @@ const IdSchema = new Schema({
   rating: {
     type: Number,
   },
-  Variety: {
+  variety: {
     type: String,
     
   },
-  Price: {
+  price: {
     type: Number,
   },
 
 }, { timestamps: true });
 
 const Idpass = mongoose.model('Idpass',IdSchema);
+module.exports= Idpass;
 
 app.get('/', (req, res) => {
   /*res.render("index",{});*/
- res.redirect('/idpass');
+ res.redirect('/idpasses');
 
 })
 
@@ -72,28 +71,29 @@ res.render("fqc",{});
 })
 
 
-app.get('/idpass', (req, res) => {
+app.get('/idpasses', (req, res) => {
   Idpass.find().sort({ createdAt: -1 })
     .then(result => {
-      res.render("index", { idpass: result, title: 'Product List' });
+      res.render("index", { idpasses: result});
     })
     .catch(err => {
       console.log(err);
     });
 });
 
-app.post('/idpass', (req, res) => {
+app.post('/idpasses', (req, res) => {
   // console.log(req.body);
   const idpass = new Idpass(req.body);
 
   idpass.save()
-    .then(result => {
-      res.redirect("idpass");
+    .then((result) => {
+      res.redirect('/idpasses');
     })
     .catch(err => {
       console.log(err);
     });
 });
+
 
 
 
@@ -118,8 +118,6 @@ app.get('/product', (req, res) => {
 app.get('/talk', (req, res) => {
   res.render("talk",{});
 })
-
-
 
   
 app.listen(port, () => {

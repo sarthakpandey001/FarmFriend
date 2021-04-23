@@ -75,20 +75,21 @@
     
   
   
-  <main> 
-     <!-- <% if (idpass.User == "farmer") { %> -->
-      <% idpass.forEach(idpass => { %>
-        <p class="username"><%= idpass.Username %></p>
-        <p class="Productname"><%= idpass.ProductName %></p>
+  <div class="userdetails"> 
+    <h3>Product List</h3>
+     <% if (idpasses.length > 0) { %>
+      <% idpasses.forEach(idpass => { %>
+        <a href='/talk.ejs'><p class="username"><%= idpass.username %></p></a>
+        <p class="Productname"><%= idpass.Productname %></p>
         <p class="district"><%= idpass.district %></p>
-        <p class="Variety"><%= idpass.Variety %></p>
+        <p class="Variety"><%= idpass.variety %></p>
         <p class="price"><%= idpass.price %></p>
       
     <% }) %>
   <% } else { %>
     <p>There is no list to display...</p>
-  <% } %>
-  </main>
+  <% } %> 
+  </div>
   <section class="join">
     <h2>Our vision!</h2>
     <p>We are Trying to establish a direct communuication between farmer and buyer eradicating the middleman in the demand-supply chain.</p>
