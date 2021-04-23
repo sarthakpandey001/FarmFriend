@@ -129,6 +129,12 @@ footer{
   text-align: center;
 }
 
+
+.userdetails{
+  display:block;
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 980px){
   nav li{
     font-size: 18px;
