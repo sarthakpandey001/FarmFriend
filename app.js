@@ -94,14 +94,14 @@ app.get('/allpss',(req,res)=>{
 
 app.post('/idpasses', (req, res) => {
   // console.log(req.body);
-  const idpass = new Idpass(
-  {username},
-  {Productname},
-  {district},
-  {rating},
-  {variety},
-  {price}
-  );
+  const idpass = new Idpass({
+    username : req.body.username,
+    Productname : req.body.Productname,
+    district : req.body.district,
+    rating : req.body.rating,
+    variety : req.body.variety,
+    price: req.body.price
+  });
   idpass.save()
     .then((result) => {
       res.redirect('/idpasses');
