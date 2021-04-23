@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 });
 const port = 3000;
 
-const dbURI= 'mongodb+srv://Devhaste:devhasteuser4321@farmfriend.tlyjg.mongodb.net/Userinfo?retryWrites=true&w=majority';
+const dbURI= 'mongodb+srv://DevHaste:devhasteuser4321@farmfriend.tlyjg.mongodb.net/UserInfo?retryWrites=true&w=majority'
 mongoose.connect(dbURI,{ useNewUrlParser: true, useUnifiedTopology: true })
  .then((result)=>console.log('connected to db'))
  .catch((err) => console.log(err));
@@ -73,7 +73,7 @@ res.render("fqc",{});
 
 app.get('/idpasses', (req, res) => {
   Idpass.find().sort({ createdAt: -1 })
-    .then(result => {
+    .then((result) => {
       res.render("index", { idpasses: result});
     })
     .catch(err => {
@@ -81,10 +81,27 @@ app.get('/idpasses', (req, res) => {
     });
 });
 
+app.get('/allpss',(req,res)=>{
+  Idpass.find()
+  .then((result)=> {
+    res.send(result);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+});
+
+
 app.post('/idpasses', (req, res) => {
   // console.log(req.body);
-  const idpass = new Idpass(req.body);
-
+  const idpass = new Idpass(
+  {username},
+  {Productname},
+  {district},
+  {rating},
+  {variety},
+  {price}
+  );
   idpass.save()
     .then((result) => {
       res.redirect('/idpasses');

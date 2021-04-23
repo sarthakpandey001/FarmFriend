@@ -79,11 +79,11 @@
     <h3>Product List</h3>
      <% if (idpasses.length > 0) { %>
       <% idpasses.forEach(idpass => { %>
-        <a href='/talk.ejs'><p class="username"><%= idpass.username %></p></a>
-        <p class="Productname"><%= idpass.Productname %></p>
-        <p class="district"><%= idpass.district %></p>
-        <p class="Variety"><%= idpass.variety %></p>
-        <p class="price"><%= idpass.price %></p>
+        <a href='/talk.ejs'><p class="username"><%= idpass.body.username %></p></a>
+        <p class="Productname"><%= idpass.body.Productname %></p>
+        <p class="district"><%= idpass.body.district %></p>
+        <p class="Variety"><%= idpass.body.variety %></p>
+        <p class="price"><%= idpass.body.price %></p>
       
     <% }) %>
   <% } else { %>
